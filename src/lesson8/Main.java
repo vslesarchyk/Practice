@@ -36,11 +36,13 @@ public class Main {
     public static void second() {
         FileReader fileReader = null;
         try {
-            fileReader = new FileReader("File.txt");
+            fileReader = new FileReader("С:\\Users\\VeroNiKA\\Desktop\\File.txt");
             //fileReader.read();
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             System.out.println(bufferedReader.readLine());
         } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
             try {
